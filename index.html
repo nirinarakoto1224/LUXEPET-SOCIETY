@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUXPET Distribution | Avant-Garde Pet Care</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://tailwindcss.com"></script>
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
 tailwind.config={
   theme:{
@@ -38,32 +38,24 @@ tailwind.config={
 body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--primary);-webkit-font-smoothing:antialiased}
 .serif{font-family:'Cormorant Garamond',serif}
 .display{font-family:'Instrument Serif',serif}
-.reveal{opacity:0;transform:translateY(18px);transition:all .8s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
 .grain{position:relative}
-.grain:before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;opacity:.4}
-.btn-primary{background:var(--primary);color:white;letter-spacing:1.8px;transition:all .3s}
+.grain:before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;opacity:.4}
+.btn-primary{background:var(--primary);color:white;letter-spacing:1.8px;transition:all .3s;display:inline-flex;align-items:center;justify-center:center;}
 .btn-primary:hover{background:#222;transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,0,0,.12)}
-.btn-ghost{border:1px solid var(--line);letter-spacing:1.4px;transition:all .3s}
-.btn-ghost:hover{border-color:var(--primary);background:white}
-.card-hover{transition:all .4s cubic-bezier(.16,1,.3,1)}
-.card-hover:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.08)}
 .nav-blur{backdrop-filter:saturate(180%) blur(14px);background:rgba(251,251,250,.82)}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-thumb{background:#D8D8D8;border-radius:999px}
-::-webkit-scrollbar-track{background:transparent}
-@media(max-width:768px){.hero-grid{grid-template-columns:1fr!important}}
 </style>
 </head>
-<body class="bg-[#FBFBFA]">
+<body class="bg-[#FBFBFA] grain">
 
 <!-- Topbar -->
 <div class="w-full bg-[#111111] text-white text-[11px] tracking-[1.6px] uppercase py-2.5 px-4 flex justify-center items-center gap-6">
 <span class="hidden md:inline opacity-70">Hub Européen — Bruxelles</span>
 <span class="w-1 h-1 bg-[#C5A880] rounded-full hidden md:block"></span>
-<span>Nouveauté 2026 — Collection Orthopédique certifiée CE</span>
+<span>Nouveauté 2026 — Sélection Spécialisée certifiée CE</span>
 <span class="w-1 h-1 bg-white/30 rounded-full hidden md:block"></span>
-<a href="#b2b" class="hidden md:inline underline underline-offset-4 decoration-white/30 hover:decoration-white transition">Accès Partenaires B2B →</a>
+<a href="#b2b" class="underline underline-offset-4 decoration-white/30 hover:decoration-white transition">Accès Partenaires B2B →</a>
 </div>
 
 <!-- Header -->
@@ -76,38 +68,23 @@ body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);color:v
 </a>
 <nav class="hidden lg:flex items-center gap-8">
 <a href="#manifeste" class="text-[13px] tracking-[1px] text-[#767676] hover:text-[#111] transition">Philosophie</a>
-<a href="#collection" class="text-[13px] tracking-[1px] text-[#767676] hover:text-[#111] transition">Collection</a>
-<a href="#atelier" class="text-[13px] tracking-[1px] text-[#767676] hover:text-[#111] transition">Savoir-faire</a>
 <a href="#b2b" class="text-[13px] tracking-[1px] text-[#767676] hover:text-[#111] transition">Partenaires B2B</a>
 </nav>
 <div class="flex items-center gap-3">
-<a href="#contact" class="hidden md:inline-flex btn-primary text-[12px] px-6 py-3 uppercase font-medium">Entrer en contact</a>
-<button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center border border-[#EAEAEA] bg-white">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-</button>
-</div>
-</div>
-<!-- Mobile menu -->
-<div id="mobileMenu" class="hidden lg:hidden border-t border-[#EAEAEA] bg-white absolute w-full left-0 top-[72px] shadow-xl">
-<div class="px-6 py-6 flex flex-col gap-4">
-<a href="#manifeste" class="text-sm tracking-wide py-2 border-b border-[#F4F4F2]">Philosophie</a>
-<a href="#collection" class="text-sm tracking-wide py-2 border-b border-[#F4F4F2]">Collection</a>
-<a href="#atelier" class="text-sm tracking-wide py-2 border-b border-[#F4F4F2]">Savoir-faire</a>
-<a href="#b2b" class="text-sm tracking-wide py-2">Partenaires B2B</a>
-<a href="#contact" class="btn-primary text-center py-3.5 uppercase text-xs tracking-widest mt-2">Entrer en contact</a>
+<a href="#contact" class="btn-primary text-[12px] px-6 py-3 uppercase font-medium">Entrer en contact</a>
 </div>
 </div>
 </header>
 
 <!-- Hero -->
 <section class="max-w-[1280px] mx-auto px-6 lg:px-8 pt-10 lg:pt-16 pb-12">
-<div class="hero-grid grid grid-cols-12 gap-8 lg:gap-10 items-center">
-<div class="col-span-12 lg:col-span-6 reveal visible">
+<div class="grid grid-cols-12 gap-8 lg:gap-10 items-center">
+<div class="col-span-12 lg:col-span-6">
 <div class="inline-flex items-center gap-2 border border-[#EAEAEA] bg-white px-3 py-1.5 rounded-full mb-6">
 <span class="w-2 h-2 bg-[#C5A880] rounded-full animate-pulse"></span>
-<span class="text-[11px] tracking-[1.4px] uppercase text-[#767676]">Édition 2026 — Disponible en pré-commande pro</span>
+<span class="text-[11px] tracking-[1.4px] uppercase text-[#767676]">Édition 2026 — Hub d'Importation</span>
 </div>
-<h1 class="display text-[42px] lg:text-[58px] leading-[0.95] tracking-[-1.5px] font-normal">
+<h1 class="display text-[42px] lg:text-[58px] leading-[1.05] tracking-[-1.5px] font-normal">
 Redéfinir le <br>
 <span class="italic font-light text-[#C5A880]">confort.</span> Connecter<br>
 les générations.
@@ -116,329 +93,35 @@ les générations.
 La première sélection européenne de Pet Tech et mobilier orthopédique d'avant-garde dédiée à la longévité et au bien-être absolu de vos compagnons.
 </p>
 <div class="flex flex-wrap gap-3 mt-8">
-<a href="#collection" class="btn-primary inline-flex items-center gap-2 px-8 py-4 text-[12px] uppercase font-medium">
-Découvrir la collection
+<a href="#contact" class="btn-primary inline-flex items-center gap-2 px-8 py-4 text-[12px] uppercase font-medium">
+Demander notre charte distribution
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
 </a>
-<a href="#atelier" class="btn-ghost inline-flex items-center bg-white px-7 py-4 text-[12px] uppercase font-medium tracking-widest">Notre manifeste</a>
 </div>
 <div class="flex items-center gap-6 mt-10 pt-8 border-t border-[#EAEAEA]">
-<div class="flex -space-x-2">
-<img src="https://i.pravatar.cc/100?img=32" class="w-8 h-8 rounded-full border-2 border-white object-cover">
-<img src="https://i.pravatar.cc/100?img=14" class="w-8 h-8 rounded-full border-2 border-white object-cover">
-<img src="https://i.pravatar.cc/100?img=28" class="w-8 h-8 rounded-full border-2 border-white object-cover">
-</div>
 <div class="text-sm leading-tight">
-<div class="font-medium">4.9/5 — 2 400+ foyers</div>
-<div class="text-[#767676] text-xs font-light">Vétérinaires & architectes d'intérieur</div>
-</div>
-<div class="hidden sm:flex items-center gap-2 ml-auto">
-<span class="text-[11px] tracking-[1px] uppercase text-[#767676]">Certifié</span>
-<span class="border border-[#EAEAEA] bg-white px-2 py-1 text-[11px] font-medium tracking-widest">CE • REACH • FSC</span>
+<div class="font-medium">Écosystème aux normes de sécurité européennes</div>
+<div class="text-[#767676] text-xs font-light">Validation qualité stricte pour le réseau de distribution</div>
 </div>
 </div>
 </div>
 
-<div class="col-span-12 lg:col-span-6 relative reveal visible" style="transition-delay:.15s">
-<div class="relative bg-[#F4F4F2] p-3 lg:p-4 rounded-[28px]">
-<div class="relative overflow-hidden rounded-[20px] bg-white aspect-[4/3.2]">
-<img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1000&q=80" alt="Chien sur mobilier luxe" class="w-full h-full object-cover">
-<div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-2xl p-4 flex items-center gap-4 shadow-lg">
-<img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?auto=format&fit=crop&w=200&q=80" class="w-14 h-14 rounded-xl object-cover">
-<div class="flex-1">
-<div class="text-xs tracking-[1px] uppercase text-[#767676]">Best-seller</div>
-<div class="text-sm font-medium leading-none mt-1">Couchage Ortho-Luxe N°01</div>
-<div class="text-xs text-[#767676]">Mémoire de forme • Lin lavé</div>
-</div>
-<div class="text-right">
-<div class="text-sm font-medium">€489</div>
-<button onclick="openQuickView()" class="text-[11px] tracking-widest uppercase underline decoration-[#C5A880] underline-offset-4">Voir</button>
-</div>
-</div>
-<div class="absolute top-4 left-4 bg-[#111] text-white text-[11px] tracking-[1.5px] uppercase px-3 py-1.5 rounded-full">Nouveau — Édition Sable</div>
-</div>
-<!-- floating stats -->
-<div class="absolute -right-2 lg:-right-4 top-10 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,.08)] p-4 hidden sm:flex items-center gap-3 border border-[#F4F4F2]">
-<div class="w-10 h-10 rounded-full bg-[#FBFBFA] border border-[#EAEAEA] flex items-center justify-center">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5A880" stroke-width="1.5"><path d="M12 21s-6-4.5-6-10a6 6 0 1 1 12 0c0 5.5-6 10-6 10Z"/><circle cx="12" cy="11" r="2"/></svg>
-</div>
-<div>
-<div class="text-xs text-[#767676]">Pression articulaire</div>
-<div class="text-sm font-semibold -mt-0.5">−42% en 7 nuits</div>
-</div>
-</div>
-</div>
-<p class="text-center text-[11px] tracking-[1px] uppercase text-[#A0A0A0] mt-3">Photographie — Studio LUXPET, Bruxelles • Lumière naturelle</p>
-</div>
-</div>
-
-<!-- Press bar -->
-<div class="mt-10 border-y border-[#EAEAEA] bg-white/60">
-<div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-5 flex flex-wrap justify-between items-center gap-4 opacity-60">
-<span class="text-[11px] tracking-[2px] uppercase">Vu dans</span>
-<span class="serif text-lg tracking-wide">AD • MILK • ELLE Décoration • Kinfolk</span>
-<span class="hidden md:inline text-xs tracking-[1px] uppercase border-l border-[#EAEAEA] pl-6">Conçu à Bruxelles — Fabriqué en Europe & Asie</span>
-</div>
-</div>
-</section>
-
-<!-- Features / Manifeste -->
-<section id="manifeste" class="bg-[#F4F4F2] border-y border-[#EAEAEA]">
-<div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
-<div class="flex flex-col lg:flex-row justify-between gap-8 mb-12 reveal">
-<div>
-<p class="text-[11px] tracking-[2px] uppercase text-[#C5A880] font-medium mb-3">— Manifeste</p>
-<h2 class="display text-[32px] lg:text-[40px] leading-none tracking-tight">Le bien-être n'est pas un luxe.<br><span class="italic font-light">C'est une exigence.</span></h2>
-</div>
-<p class="max-w-[460px] text-[#767676] font-light leading-6 text-[15px] lg:text-right lg:pt-4">Nous sélectionnons l'essentiel : des objets durables, silencieux et beaux, qui prennent soin de la santé sans compromettre l'esthétique de votre intérieur.</p>
-</div>
-<div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-<div class="bg-white p-8 lg:p-9 border border-[#EAEAEA] card-hover reveal">
-<div class="w-10 h-10 rounded-full bg-[#FBFBFA] border border-[#EAEAEA] flex items-center justify-center mb-6">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.3"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/></svg>
-</div>
-<h3 class="text-[16px] font-medium tracking-tight border-l-2 border-[#C5A880] pl-3 mb-3">Innovation Certifiée</h3>
-<p class="text-[14px] leading-6 text-[#767676] font-light">Technologie silencieuse, connectée et rigoureusement validée CE. Capteurs sans ondes, matériaux testés en laboratoire indépendant.</p>
-<div class="mt-6 flex items-center gap-2 text-[12px] tracking-wide">
-<span class="w-1.5 h-1.5 bg-[#C5A880] rounded-full"></span> Faible émission • Recyclable
-</div>
-</div>
-<div class="bg-white p-8 lg:p-9 border border-[#EAEAEA] card-hover reveal" style="transition-delay:.08s">
-<div class="w-10 h-10 rounded-full bg-[#FBFBFA] border border-[#EAEAEA] flex items-center justify-center mb-6">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.3"><path d="M12 21s-6-4.3-6-9a6 6 0 0 1 12 0c0 4.7-6 9-6 9Z"/><path d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
-</div>
-<h3 class="text-[16px] font-medium tracking-tight border-l-2 border-[#C5A880] pl-3 mb-3">Ergonomie & Santé</h3>
-<p class="text-[14px] leading-6 text-[#767676] font-light">Mousse à mémoire de forme haute densité, soutien cervical, tissu thermorégulateur. Pensé avec vétérinaires ostéopathes.</p>
-<div class="mt-6 flex items-center gap-2 text-[12px] tracking-wide">
-<span class="w-1.5 h-1.5 bg-[#C5A880] rounded-full"></span> Réduit l'anxiété • +28% mobilité
-</div>
-</div>
-<div class="bg-white p-8 lg:p-9 border border-[#EAEAEA] card-hover reveal" style="transition-delay:.16s">
-<div class="w-10 h-10 rounded-full bg-[#FBFBFA] border border-[#EAEAEA] flex items-center justify-center mb-6">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.3"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><path d="M12 12h.01"/></svg>
-</div>
-<h3 class="text-[16px] font-medium tracking-tight border-l-2 border-[#C5A880] pl-3 mb-3">Esthétique Durable</h3>
-<p class="text-[14px] leading-6 text-[#767676] font-light">Lignes contemporaines, lin français, chêne FSC. Conçu pour traverser les années et s'intégrer dans les intérieurs exigeants.</p>
-<div class="mt-6 flex items-center gap-2 text-[12px] tracking-wide">
-<span class="w-1.5 h-1.5 bg-[#C5A880] rounded-full"></span> Garanti 5 ans • Réparable
+<div class="col-span-12 lg:col-span-6 relative">
+<div class="relative bg-[#F4F4F2] p-4 rounded-[24px]">
+<div class="w-full h-[380px] bg-gradient-to-tr from-[#EAEAEA] to-[#FBFBFA] rounded-[16px] flex items-center justify-center text-center p-8">
+    <div>
+        <span class="text-[11px] tracking-[3px] uppercase text-[#767676] block mb-2">LuxPet Society Studio</span>
+        <h3 class="serif text-2xl italic text-[#111111]">Architecture & Bien-être Animal</h3>
+    </div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- Collection -->
-<section id="collection" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
-<div class="flex flex-wrap justify-between items-end gap-6 mb-10 reveal">
-<div>
-<p class="text-[11px] tracking-[2px] uppercase text-[#C5A880] font-medium mb-3">Collection 2026</p>
-<h2 class="display text-[34px] leading-none">Objets de soin, <span class="italic font-light">objets de désir.</span></h2>
-</div>
-<div class="flex items-center gap-2 bg-[#F4F4F2] p-1 rounded-full border border-[#EAEAEA]">
-<button data-filter="all" class="filter-btn active bg-[#111] text-white px-5 py-2 rounded-full text-xs tracking-widest uppercase">Tout</button>
-<button data-filter="couchage" class="filter-btn px-5 py-2 rounded-full text-xs tracking-widest uppercase text-[#767676] hover:text-[#111]">Couchage</button>
-<button data-filter="tech" class="filter-btn px-5 py-2 rounded-full text-xs tracking-widest uppercase text-[#767676] hover:text-[#111]">Pet Tech</button>
-<button data-filter="mobilier" class="filter-btn px-5 py-2 rounded-full text-xs tracking-widest uppercase text-[#767676] hover:text-[#111]">Mobilier</button>
-</div>
-</div>
-
-<div id="productGrid" class="grid md:grid-cols-3 gap-6 lg:gap-8">
-<!-- Product 1 -->
-<div data-cat="couchage" class="group bg-white border border-[#EAEAEA] overflow-hidden card-hover reveal">
-<div class="relative aspect-[4/3] overflow-hidden bg-[#F4F4F2]">
-<img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-700">
-<span class="absolute top-3 left-3 bg-white text-[11px] tracking-[1px] uppercase px-2.5 py-1 rounded-full border border-[#EAEAEA]">Orthopédique</span>
-<span class="absolute top-3 right-3 bg-[#C5A880] text-white text-[11px] tracking-[1px] uppercase px-2.5 py-1 rounded-full">—12%</span>
-<button onclick="openQuickView()" class="absolute bottom-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
-</button>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-start gap-4">
-<div>
-<h3 class="font-medium leading-tight">Couchage Ortho-Luxe N°01</h3>
-<p class="text-xs text-[#767676] mt-1">Sable • Lin lavé • Mousse HR 55kg</p>
-</div>
-<div class="text-right">
-<div class="text-sm font-semibold">€489</div>
-<div class="text-xs line-through text-[#A0A0A0]">€556</div>
-</div>
-</div>
-<div class="mt-4 flex gap-2">
-<span class="w-5 h-5 rounded-full bg-[#E8DCC6] border border-[#EAEAEA] ring-1 ring-[#111] ring-offset-1"></span>
-<span class="w-5 h-5 rounded-full bg-[#8A9A8B] border border-white shadow"></span>
-<span class="w-5 h-5 rounded-full bg-[#2B2B2B] border border-white shadow"></span>
-<span class="ml-auto text-[11px] tracking-[1px] uppercase text-[#767676] flex items-center gap-1"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> En stock</span>
-</div>
-</div>
-</div>
-<!-- Product 2 -->
-<div data-cat="tech" class="group bg-white border border-[#EAEAEA] overflow-hidden card-hover reveal" style="transition-delay:.07s">
-<div class="relative aspect-[4/3] overflow-hidden bg-[#F4F4F2]">
-<img src="https://images.unsplash.com/photo-1548546738-8509cb246ed3?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-700">
-<span class="absolute top-3 left-3 bg-white text-[11px] tracking-[1px] uppercase px-2.5 py-1 rounded-full border border-[#EAEAEA]">Pet Tech</span>
-<button onclick="openQuickView()" class="absolute bottom-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
-</button>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-start gap-4">
-<div>
-<h3 class="font-medium leading-tight">Distributeur Aura Connect</h3>
-<p class="text-xs text-[#767676] mt-1">Silencieux 19dB • App • Inox 304</p>
-</div>
-<div class="text-right">
-<div class="text-sm font-semibold">€329</div>
-<div class="text-xs text-[#767676]">CE certifié</div>
-</div>
-</div>
-<div class="mt-4 flex items-center gap-2 text-xs text-[#767676]">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C5A880" stroke-width="1.5"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M12 8v-2"/><path d="M12 18v-2"/></svg> Autonomie 30j • Garantie 3 ans
-<span class="ml-auto text-[11px] tracking-[1px] uppercase bg-[#F4F4F2] px-2 py-1 rounded-full">Nouveau</span>
-</div>
-</div>
-</div>
-<!-- Product 3 -->
-<div data-cat="mobilier" class="group bg-white border border-[#EAEAEA] overflow-hidden card-hover reveal" style="transition-delay:.14s">
-<div class="relative aspect-[4/3] overflow-hidden bg-[#F4F4F2]">
-<img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-700">
-<span class="absolute top-3 left-3 bg-white text-[11px] tracking-[1px] uppercase px-2.5 py-1 rounded-full border border-[#EAEAEA]">Mobilier</span>
-<button onclick="openQuickView()" class="absolute bottom-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
-</button>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-start gap-4">
-<div>
-<h3 class="font-medium leading-tight">Arbre Félin Atrium</h3>
-<p class="text-xs text-[#767676] mt-1">Chêne massif • Sisal • 142cm</p>
-</div>
-<div class="text-right">
-<div class="text-sm font-semibold">€720</div>
-<div class="text-xs text-[#767676]">Sur commande</div>
-</div>
-</div>
-<div class="mt-4 flex items-center gap-2 text-xs">
-<span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span> <span class="text-[#767676]">Délai 3 semaines — Atelier Portugal</span>
-</div>
-</div>
-</div>
-</div>
-
-<div class="mt-8 flex justify-center">
-<a href="#contact" class="text-xs tracking-[2px] uppercase underline underline-offset-8 decoration-[#C5A880]">Voir le catalogue complet (PDF pro) →</a>
-</div>
-</section>
-
-<!-- Atelier / savoir faire -->
-<section id="atelier" class="bg-[#111111] text-white relative overflow-hidden grain">
-<div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 lg:py-20 relative">
-<div class="grid lg:grid-cols-12 gap-10 items-center">
-<div class="lg:col-span-5 reveal">
-<p class="text-[11px] tracking-[2px] uppercase text-[#C5A880] mb-4">Savoir-faire</p>
-<h2 class="display text-[36px] leading-[0.95]">Pensé avec des<br>vétérinaires. Dessiné<br>par des designers.</h2>
-<p class="mt-6 text-white/60 font-light leading-7 text-[15px]">Chaque prototype passe 6 mois en test clinique. Nous mesurons la pression articulaire, la qualité du sommeil et le niveau de stress. Seuls 1 objet sur 12 atteint la production.</p>
-<div class="grid grid-cols-3 gap-6 mt-8 border-t border-white/10 pt-8">
-<div>
-<div class="text-2xl font-light">−42%</div>
-<div class="text-[11px] tracking-[1px] uppercase text-white/50 leading-tight mt-1">Pression<br>articulaire</div>
-</div>
-<div>
-<div class="text-2xl font-light">19 dB</div>
-<div class="text-[11px] tracking-[1px] uppercase text-white/50 leading-tight mt-1">Silence<br>absolu</div>
-</div>
-<div>
-<div class="text-2xl font-light">5 ans</div>
-<div class="text-[11px] tracking-[1px] uppercase text-white/50 leading-tight mt-1">Garantie<br>réparable</div>
-</div>
-</div>
-</div>
-<div class="lg:col-span-7 reveal" style="transition-delay:.12s">
-<div class="relative rounded-[24px] overflow-hidden bg-[#1A1A1A] p-2">
-<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover rounded-[16px] opacity-90">
-<div class="absolute bottom-6 left-6 right-6 bg-white text-[#111] rounded-2xl p-5 flex gap-4 items-center">
-<div class="w-10 h-10 rounded-full bg-[#F4F4F2] flex items-center justify-center text-sm">Ⓥ</div>
-<div class="flex-1">
-<div class="text-sm font-medium">Étude clinique — Université de Gand</div>
-<div class="text-xs text-[#767676]">12 chiens seniors, 90 nuits • +28% mobilité matinale</div>
-</div>
-<a href="#" onclick="event.preventDefault();showToast('Rapport complet disponible sur demande pro')" class="text-xs tracking-widest uppercase underline decoration-[#C5A880] underline-offset-4 hidden sm:block">Lire</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- B2B Section -->
-<section id="b2b" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
-<div class="bg-white border border-[#EAEAEA] rounded-[24px] overflow-hidden">
-<div class="grid lg:grid-cols-12">
-<div class="lg:col-span-7 p-8 lg:p-10 reveal">
-<p class="text-[11px] tracking-[2px] uppercase text-[#C5A880] font-medium mb-3">Hub Européen & Distribution</p>
-<h2 class="display text-[32px] leading-none tracking-tight">Bruxelles, porte d'entrée <br><span class="italic font-light">vers l'Europe.</span></h2>
-<p class="mt-4 text-[15px] leading-6 text-[#767676] font-light max-w-[520px]">Basés à Bruxelles, nous connectons les fabricants de Pet Tech les plus innovants d'Asie avec les réseaux de distribution européens. Nous gérons la conformité réglementaire et l'excellence logistique.</p>
-
-<div class="grid grid-cols-3 gap-4 mt-8">
-<div class="bg-[#FBFBFA] border border-[#EAEAEA] rounded-2xl p-5 text-center">
-<div class="text-xl font-light">120+</div>
-<div class="text-[11px] tracking-[1px] uppercase text-[#767676] mt-1">Partenaires</div>
-</div>
-<div class="bg-[#FBFBFA] border border-[#EAEAEA] rounded-2xl p-5 text-center">
-<div class="text-xl font-light">12</div>
-<div class="text-[11px] tracking-[1px] uppercase text-[#767676] mt-1">Pays livrés</div>
-</div>
-<div class="bg-[#C5A880] text-white rounded-2xl p-5 text-center">
-<div class="text-xl font-light">100%</div>
-<div class="text-[11px] tracking-[1px] uppercase text-white/80 mt-1">Conforme CE</div>
-</div>
-</div>
-
-<div class="mt-8 grid md:grid-cols-3 gap-6 border-t border-[#EAEAEA] pt-8">
-<div>
-<h4 class="text-sm font-medium flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#C5A880] rounded-full"></span> Distribution</h4>
-<p class="text-xs leading-5 text-[#767676] mt-2 font-light">Accès réseau retail, concept stores, vétérinaires. Marges protégées, exclusivités territoriales.</p>
-</div>
-<div>
-<h4 class="text-sm font-medium flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#C5A880] rounded-full"></span> Conformité</h4>
-<p class="text-xs leading-5 text-[#767676] mt-2 font-light">Dossier CE, REACH, traductions, SAV européen. Vous importez sans risque.</p>
-</div>
-<div>
-<h4 class="text-sm font-medium flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#C5A880] rounded-full"></span> Logistique</h4>
-<p class="text-xs leading-5 text-[#767676] mt-2 font-light">Stock central Bruxelles, livraison 48/72h, dropship & EDI disponibles.</p>
-</div>
-</div>
-</div>
-
-<div class="lg:col-span-5 bg-[#F4F4F2] border-t lg:border-t-0 lg:border-l border-[#EAEAEA] p-8 lg:p-10 flex flex-col reveal" style="transition-delay:.1s">
-<h3 class="font-medium">Devenir partenaire</h3>
-<p class="text-sm text-[#767676] font-light mt-2">Réponse sous 24h ouvrées. Accès catalogue pro & grilles tarifaires.</p>
-<form id="b2bForm" class="mt-6 space-y-3">
-<div class="grid grid-cols-2 gap-3">
-<input required placeholder="Société *" class="w-full bg-white border border-[#EAEAEA] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#C5A880] placeholder:text-[#A0A0A0]">
-<input required placeholder="Nom *" class="w-full bg-white border border-[#EAEAEA] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#C5A880] placeholder:text-[#A0A0A0]">
-</div>
-<input required type="email" placeholder="Email professionnel *" class="w-full bg-white border border-[#EAEAEA] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#C5A880] placeholder:text-[#A0A0A0]">
-<select class="w-full bg-white border border-[#EAEAEA] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#C5A880] text-[#767676]">
-<option>Je suis... Retail / Boutique</option>
-<option>E-commerce</option>
-<option>Clinique vétérinaire</option>
-<option>Distributeur / Grossiste</option>
-<option>Autre</option>
-</select>
-<textarea rows="3" placeholder="Votre projet en quelques lignes" class="w-full bg-white border border-[#EAEAEA] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#C5A880] placeholder:text-[#A0A0A0] resize-none"></textarea>
-<label class="flex items-start gap-2 text-[11px] leading-4 text-[#767676]">
-<input type="checkbox" required class="mt-0.5 accent-[#111]"> J'accepte d'être recontacté par LUXPET dans le cadre d'une relation B2B. Données non cédées.
-</label>
-<button type="submit" class="w-full btn-primary py-4 rounded-xl text-xs uppercase tracking-widest font-medium">Demander l'accès pro</button>
-<p class="text-center text-[11px] text-[#A0A0A0]">CE • REACH • FSC • Livraison depuis Bruxelles</p>
-</form>
-</div>
-</div>
-</div>
-
-<!-- Map strip -->
-<div class="mt-6 bg-[#111] text-white rounded-[20px] px-6 lg:px-8 py-6 flex flex-wrap items-center justify-between gap-6 reveal">
+<!-- Stock Strip Section -->
+<section id="manifeste" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-6">
+<div class="bg-[#111] text-white rounded-[20px] px-6 lg:px-8 py-6 flex flex-wrap items-center justify-between gap-6">
     <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 21s-6-4.5-6-10a6 6 0 0 1 12 0c0 5.5-6 10-6 10z"></path></svg>
@@ -448,219 +131,50 @@ Découvrir la collection
             <div class="text-xs opacity-60">Avenue Louise • 1050 Bruxelles</div>
         </div>
     </div>
-</div>
-<div class="flex items-center gap-2 text-xs tracking-[1px] uppercase">
-<span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span> Expéditions quotidiennes UE
-<span class="hidden md:inline w-px h-4 bg-white/20 mx-3"></span>
-<span class="hidden md:inline text-white/60 normal-case tracking-normal">Délai moyen 2,4 jours</span>
-</div>
+    <div class="flex items-center gap-2 text-xs tracking-[1px] uppercase">
+        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span> EXPÉDITIONS QUOTIDIENNES UE | Délai moyen 2,4 jours
+    </div>
 </div>
 </section>
 
-<!-- Contact / Newsletter -->
-<section id="contact" class="border-t border-[#EAEAEA] bg-white">
-<div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-12 flex flex-col lg:flex-row justify-between gap-10 items-start">
-<div class="max-w-[560px] reveal">
-<div class="contact-section">
-    <div class="contact-info-left">
-        <h2>Restons en contact.</h2>
-        <p>Presse, partenariats ou simple curiosité ? Nous répondons à chaque message avec attention.</p>
+<!-- B2B Section -->
+<section id="b2b" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 text-center border-t border-[#EAEAEA] mt-12">
+<div class="max-w-3xl mx-auto">
+<h2 class="display text-3xl lg:text-4xl mb-6">Hub Européen & Distribution Commerciale</h2>
+<p class="text-[#767676] font-light text-base leading-7">
+Idéalement positionnés à Bruxelles, nous coordonnons l'intégration et le routage logistique transfrontalier des technologies d'Asie pour animaux vers les réseaux de distribution européens. Nous assurons l'entière mise en conformité réglementaire de nos marques partenaires.
+</p>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 border-t border-[#EAEAEA]">
+<div class="grid grid-cols-12 gap-8 items-center">
+    <div class="col-span-12 lg:col-span-6">
+        <h2 class="display text-3xl mb-4">Restons en contact.</h2>
+        <p class="text-[#767676] font-light mb-6">Presse, partenariats B2B ou demandes d'intégration ? Notre bureau d'études basé à Bruxelles analyse chaque demande avec la plus haute attention.</p>
         
-        <div class="contact-buttons-container" style="margin-top: 20px;">
-            <a href="mailto:info@luxepetsociety.com" class="contact-email-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; border: 1px solid #111111; color: #111111; text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; font-weight: 500;">
+        <div class="flex">
+            <a href="mailto:info@luxepetsociety.com" class="inline-flex items-center gap-3 px-6 py-4 border border-[#111111] text-[#111111] text-[12px] font-medium tracking-[1.5px] uppercase transition hover:bg-[#111] hover:text-white text-decoration-none">
                 <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 INFO@LUXEPETSOCIETY.COM
             </a>
         </div>
     </div>
-</div>
-
-</span>
-</div>
-</div>
-<div class="w-full lg:w-[420px] bg-[#FBFBFA] border border-[#EAEAEA] rounded-2xl p-6 reveal" style="transition-delay:.08s">
-<h4 class="text-sm font-medium">Newsletter Atelier</h4>
-<p class="text-xs text-[#767676] font-light mt-1">Nouveautés, études et coulisses. 1 email par mois, désabonnement en 1 clic.</p>
-<form id="newsletterForm" class="mt-4 flex gap-2">
-<input required type="email" placeholder="Votre email" class="flex-1 bg-white border border-[#EAEAEA] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#C5A880]">
-<button class="bg-[#111] text-white px-6 rounded-xl text-xs tracking-widest uppercase font-medium hover:bg-black transition">S'inscrire</button>
-</form>
-<p class="text-[11px] text-[#A0A0A0] mt-2">En vous inscrivant, vous acceptez notre politique de confidentialité.</p>
-</div>
+    
+    <div class="col-span-12 lg:col-span-6 bg-[#F4F4F2] p-8 rounded-[16px]">
+        <h3 class="font-medium text-sm tracking-wide mb-2">Newsletter Atelier</h3>
+        <p class="text-xs text-[#767676] mb-4">Analyses sectorielles, veilles technologiques Pet Tech et accès prioritaires aux futurs catalogues.</p>
+        <div class="flex gap-2">
+            <input type="email" placeholder="Votre adresse email" class="flex-1 px-4 py-3 text-sm bg-white border border-[#EAEAEA] focus:outline-none focus:border-[#111]">
+            <button class="bg-[#111] text-white text-xs tracking-widest uppercase px-6 font-medium hover:bg-[#222] transition">S'inscrire</button>
+        </div>
+    </div>
 </div>
 </section>
 
-<footer class="bg-[#FBFBFA] border-t border-[#EAEAEA] pt-10 pb-8">
-<div class="max-w-[1280px] mx-auto px-6 lg:px-8">
-<div class="grid md:grid-cols-4 gap-8 text-sm">
-<div>
-<div class="tracking-[3px] uppercase font-light">LUXPET</div>
-<div class="text-xs text-[#767676] mt-2 leading-5 font-light">Mobilier orthopédique & Pet Tech d'avant-garde.<br>Conçu pour durer. Pensé pour aimer.</div>
-<div class="flex gap-2 mt-4">
-<a href="#" class="w-8 h-8 rounded-full bg-white border border-[#EAEAEA] flex items-center justify-center hover:border-[#111] transition text-xs">IG</a>
-<a href="#" class="w-8 h-8 rounded-full bg-white border border-[#EAEAEA] flex items-center justify-center hover:border-[#111] transition text-xs">IN</a>
-<a href="#" class="w-8 h-8 rounded-full bg-white border border-[#EAEAEA] flex items-center justify-center hover:border-[#111] transition text-xs">↗</a>
-</div>
-</div>
-<div>
-<div class="text-xs tracking-[1.5px] uppercase font-medium">Explorer</div>
-<ul class="mt-3 space-y-2 text-[#767676] font-light text-[13px]">
-<li><a href="#collection" class="hover:text-[#111]">Collection</a></li>
-<li><a href="#manifeste" class="hover:text-[#111]">Philosophie</a></li>
-<li><a href="#atelier" class="hover:text-[#111]">Savoir-faire</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('Catalogue PDF envoyé par email pro')">Catalogue PDF</a></li>
-</ul>
-</div>
-<div>
-<div class="text-xs tracking-[1.5px] uppercase font-medium">Partenaires</div>
-<ul class="mt-3 space-y-2 text-[#767676] font-light text-[13px]">
-<li><a href="#b2b" class="hover:text-[#111]">Devenir revendeur</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('Espace pro bientôt disponible')">Espace pro (login)</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('Conditions B2B sur demande')">Tarifs & conditions</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('Support disponible lun-ven')">Support</a></li>
-</ul>
-</div>
-<div>
-<div class="text-xs tracking-[1.5px] uppercase font-medium">Légal</div>
-<ul class="mt-3 space-y-2 text-[#767676] font-light text-[13px]">
-<li><a href="#" onclick="event.preventDefault();showToast('Mentions légales')">Mentions légales</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('Confidentialité')">Confidentialité</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('CGV B2B')">CGV B2B</a></li>
-<li><a href="#" onclick="event.preventDefault();showToast('Cookies')">Cookies</a></li>
-</ul>
-</div>
-</div>
-<div class="mt-10 pt-6 border-t border-[#EAEAEA] flex flex-col md:flex-row justify-between gap-3 text-xs text-[#767676] font-light">
-<p>© 2026 LUXPET Distribution Bruxelles. Tous droits réservés.</p>
-<p class="opacity-60">Espace officiel en cours de déploiement — Accès partenaires restreints. • Design by LUXPET Studio</p>
-</div>
-</div>
-</footer>
-
-<!-- Quick view modal -->
-<div id="quickView" class="fixed inset-0 z-[60] hidden">
-<div class="absolute inset-0 bg-[#111]/50 backdrop-blur-sm" onclick="closeQuickView()"></div>
-<div class="absolute inset-0 flex items-center justify-center p-4">
-<div class="bg-white rounded-[20px] max-w-[860px] w-full overflow-hidden shadow-2xl">
-<div class="grid md:grid-cols-2">
-<div class="bg-[#F4F4F2] p-3">
-<img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover rounded-2xl aspect-[4/3] md:aspect-square">
-</div>
-<div class="p-7 lg:p-8">
-<div class="flex justify-between items-start">
-<div>
-<p class="text-[11px] tracking-[1.5px] uppercase text-[#C5A880]">Édition Sable — N°01</p>
-<h3 class="text-xl font-medium mt-1">Couchage Ortho-Luxe</h3>
-<p class="text-sm text-[#767676] font-light">Lin lavé • Mousse HR 55kg • Housse déhoussable</p>
-</div>
-<button onclick="closeQuickView()" class="w-8 h-8 rounded-full bg-[#F4F4F2] flex items-center justify-center">✕</button>
-</div>
-<div class="mt-6 flex gap-2 text-xs">
-<span class="bg-[#F4F4F2] border border-[#EAEAEA] px-3 py-1.5 rounded-full">OEKO-TEX</span>
-<span class="bg-[#F4F4F2] border border-[#EAEAEA] px-3 py-1.5 rounded-full">CE</span>
-<span class="bg-[#111] text-white px-3 py-1.5 rounded-full">Best-seller</span>
-</div>
-<ul class="mt-6 space-y-2.5 text-sm text-[#767676] font-light">
-<li class="flex gap-2"><span class="text-[#C5A880]">—</span> Réduction de 42% de la pression articulaire (test Gand)</li>
-<li class="flex gap-2"><span class="text-[#C5A880]">—</span> Thermorégulation naturelle, lavable à 30°</li>
-<li class="flex gap-2"><span class="text-[#C5A880]">—</span> 3 tailles : S (70cm) • M (90cm) • L (110cm)</li>
-</ul>
-<div class="mt-7 flex items-center gap-4">
-<div class="text-2xl font-light">€489 <span class="text-sm text-[#A0A0A0] line-through">€556</span></div>
-<span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full">En stock — 48h</span>
-</div>
-<div class="mt-6 flex gap-3">
-<button onclick="closeQuickView();showToast('Ajouté à votre sélection pro')" class="flex-1 btn-primary py-3.5 rounded-xl text-xs uppercase tracking-widest">Demander un échantillon pro</button>
-<button onclick="closeQuickView();document.querySelector('#b2b').scrollIntoView({behavior:'smooth'})" class="px-6 py-3.5 rounded-xl border border-[#EAEAEA] text-xs uppercase tracking-widest bg-white">Devenir partenaire</button>
-</div>
-<p class="text-[11px] text-[#A0A0A0] mt-3 text-center">Tarif public indicatif • Grille B2B sur demande</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Toast -->
-<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#111] text-white text-sm px-5 py-3 rounded-full shadow-xl hidden items-center gap-3 z-[70]">
-<span id="toastMsg">Message</span>
-<button onclick="hideToast()" class="ml-2 text-white/60 hover:text-white">✕</button>
-</div>
-
-<script>
-// Mobile menu
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-document.querySelectorAll('#mobileMenu a').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.add('hidden')));
-
-// Header shadow on scroll
-const header = document.getElementById('header');
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY>10) header.classList.add('shadow-sm');
-  else header.classList.remove('shadow-sm');
-});
-
-// Reveal on scroll
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=> observer.observe(el));
-
-// Filter
-const filterBtns = document.querySelectorAll('.filter-btn');
-const products = document.querySelectorAll('#productGrid > div');
-filterBtns.forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    filterBtns.forEach(b=>{b.classList.remove('active','bg-[#111]','text-white'); b.classList.add('text-[#767676]')});
-    btn.classList.add('active','bg-[#111]','text-white'); btn.classList.remove('text-[#767676]');
-    const cat = btn.dataset.filter;
-    products.forEach(p=>{
-      if(cat==='all' || p.dataset.cat===cat){ p.style.display=''; p.classList.add('visible')}
-      else p.style.display='none';
-    });
-  });
-});
-
-// Forms
-function showToast(msg){
-  const t=document.getElementById('toast');
-  document.getElementById('toastMsg').textContent=msg;
-  t.classList.remove('hidden'); t.classList.add('flex');
-  clearTimeout(window._toastTimer);
-  window._toastTimer=setTimeout(hideToast,3200);
-}
-function hideToast(){ document.getElementById('toast').classList.add('hidden'); document.getElementById('toast').classList.remove('flex');}
-document.getElementById('b2bForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  e.target.reset();
-  showToast('Merci ! Votre demande pro a été envoyée. Réponse sous 24h.');
-});
-document.getElementById('newsletterForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  e.target.reset();
-  showToast('Bienvenue dans l\'Atelier — Vérifiez votre email ✉️');
-});
-
-// Quick view
-function openQuickView(){ document.getElementById('quickView').classList.remove('hidden'); document.body.style.overflow='hidden';}
-<footer>
-    <p>&copy; 2026 LUXPET Distribution Bruxelles. Tous droits réservés.</p>
-    <p style="opacity: 0.8; font-size: 0.75rem;">
+<!-- Footer -->
+<footer class="max-w-[1280px] mx-auto px-6 lg:px-8 py-8 border-t border-[#EAEAEA] text-center">
+    <p class="text-sm">&copy; 2026 LUXPET Distribution Bruxelles. Tous droits réservés.</p>
+    <p class="text-[#767676] text-xs mt-2">
         Contact : info@luxepetsociety.com <br>
-        <span style="opacity: 0.5;">LuxPet Distribution (Division en cours d'immatriculation) — Espace officiel en cours de déploiement.</span>
-    </p>
-</footer>
-
-</body>
-</html>
-
-652        </p>
-653    </footer>
-654
-655    </body>
-656    </html>
-</script>
-</body>
-</html>
